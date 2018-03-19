@@ -1,0 +1,21 @@
+{
+  "name": "serverless-http-trigger",
+  "version": "0.0.1",
+  "description": "Provide cloud service provider abstraction layer on http trigger",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest __test__/**.test.js"
+  },
+  "keywords": [
+    "abstraction",
+    "http",
+    "trigger",
+    "serverless"
+  ],
+  "author": "Chii Aik Fang",
+  "license": "ISC",
+  "dependencies": {
+    "serverless-lambda-event-helper": "git+https://github.com/chiiaik/serverless-lambda-event-helper.git",
+    "serverless-lambda-http-response": "git+https://github.com/chiiaik/serverless-lambda-http-response.git"
+  }
+}
