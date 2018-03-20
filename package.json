@@ -1,7 +1,7 @@
 {
   "name": "serverless-http-trigger",
-  "version": "0.0.3",
-  "description": "Provide cloud service provider abstraction layer on http trigger",
+  "version": "0.0.4",
+  "description": "Wrapper to abstract cloud service provider specific implementation on HTTP trigger handler",
   "main": "index.js",
   "scripts": {
     "test": "jest __test__/**.test.js"
