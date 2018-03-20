@@ -14,13 +14,15 @@ These instructions will get you a copy of the project up and running on your loc
 yarn install
 ```
 
-## Running the tests
+## Unit Testing
 
 ### Prerequisites
 
 ```
 yarn add jest --dev
 ```
+
+### Running the tests
 
 ```
 yarn test
