@@ -1,6 +1,6 @@
 {
   "name": "serverless-http-trigger",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Provide cloud service provider abstraction layer on http trigger",
   "main": "index.js",
   "scripts": {
