@@ -1,6 +1,6 @@
 {
   "name": "serverless-http-trigger",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Wrapper to abstract cloud service provider specific implementation on HTTP trigger handler",
   "main": "index.js",
   "scripts": {
@@ -12,8 +12,16 @@
     "trigger",
     "serverless"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chiiaik/serverless-http-trigger.git"
+  },
   "author": "Chii Aik Fang",
-  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chiiaik/serverless-http-trigger/issues"
+  },
+  "homepage": "https://github.com/chiiaik/serverless-http-trigger#readme",
+  "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
     "serverless-lambda-event-helper": "git+https://github.com/chiiaik/serverless-lambda-event-helper.git",
     "serverless-lambda-http-response": "git+https://github.com/chiiaik/serverless-lambda-http-response.git"
