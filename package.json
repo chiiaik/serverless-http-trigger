@@ -23,7 +23,7 @@
   "homepage": "https://github.com/chiiaik/serverless-http-trigger#readme",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "serverless-lambda-event-helper": "git+https://github.com/chiiaik/serverless-lambda-event-helper.git",
-    "serverless-lambda-http-response": "git+https://github.com/chiiaik/serverless-lambda-http-response.git"
+    "serverless-lambda-event-helper": "^1.0.11",
+    "serverless-lambda-http-response": "^1.0.5"
   }
 }

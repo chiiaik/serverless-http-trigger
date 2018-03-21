@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"serverless-lambda-event-helper@git+https://github.com/chiiaik/serverless-lambda-event-helper.git":
-  version "1.0.6"
-  resolved "git+https://github.com/chiiaik/serverless-lambda-event-helper.git#97ad33ed6123c6452b0dcd8a0367b1f7a4d52dae"
+serverless-lambda-event-helper@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/serverless-lambda-event-helper/-/serverless-lambda-event-helper-1.0.11.tgz#d36f94c7e0ea90377c2d20ead5d42c27d4496b49"
 
-"serverless-lambda-http-response@git+https://github.com/chiiaik/serverless-lambda-http-response.git":
-  version "1.0.3"
-  resolved "git+https://github.com/chiiaik/serverless-lambda-http-response.git#736eab33df8df03ba591b39d79365cf8e72ac29a"
+serverless-lambda-http-response@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/serverless-lambda-http-response/-/serverless-lambda-http-response-1.0.5.tgz#834f6b298cf4c45a3471f4c97d866c363bdd5d59"
