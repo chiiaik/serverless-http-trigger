@@ -4,7 +4,7 @@
   "description": "Wrapper to abstract cloud service provider specific implementation on HTTP trigger handler",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --verbose --coverage"
   },
   "keywords": [
     "abstraction",
