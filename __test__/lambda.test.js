@@ -2,7 +2,7 @@ const Lambda = require('./lambda');
 const AWS_TEST_EVENT = require('./aws.http-trigger.event');
 const AZURE_TEST_EVENT = require('./azure.http-trigger.event');
 
-test ('POST handler is invoked for aws event', (done) => {
+test ('2.1 POST handler is invoked for aws event', (done) => {
     function callback (error, result) {
         let tmp = result.body;
         expect(error).toBeNull();
@@ -13,7 +13,7 @@ test ('POST handler is invoked for aws event', (done) => {
     Lambda.handler(AWS_TEST_EVENT, {}, callback);
 })
 
-test ('POST handler is invoked for azure event', (done) => {
+test ('2.2 POST handler is invoked for azure event', (done) => {
     function callback () {
         let result = AZURE_TEST_EVENT.res;
         expect(result.body).toEqual('POST is handled');

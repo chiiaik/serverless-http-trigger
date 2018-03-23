@@ -22,7 +22,7 @@ DefaultResponseAdapter.prototype.ok = function (result) {
     self._send(null, response);
 }
 
-DefaultResponseAdapter.prototype._send = function (err, res) {
+DefaultResponseAdapter.prototype._send = function (err, res = null) {
     let self = this;
     if (self.callback && typeof self.callback === 'function') {
         try {

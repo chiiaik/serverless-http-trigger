@@ -22,7 +22,7 @@ AwsResponseAdapter.prototype.ok = function (result) {
     self._send(null, response);
 }
 
-AwsResponseAdapter.prototype._send = function (err, res) {
+AwsResponseAdapter.prototype._send = function (err, res = null) {
     let self = this;
     if (self.callback && typeof self.callback === 'function') {
         try {
