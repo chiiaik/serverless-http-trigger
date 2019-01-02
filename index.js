@@ -75,7 +75,7 @@ HttpTrigger.prototype._handler = function (arg1, arg2, arg3) {
 HttpTrigger.prototype._invokeResultHandler = function (result) {
     const self = this;
     if (self.responseHandler) {
-        return self.responseHandler(result);
+        return self.responseHandler(provider, result);
     }
     return self.responseAdapter.ok(result);
 }
