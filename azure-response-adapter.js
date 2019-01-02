@@ -22,6 +22,12 @@ AzureResponseAdapter.prototype.ok = function (result) {
     self._send(response);
 }
 
+AzureResponseAdapter.prototype.redirect = function (isPermanent, location) {
+    const self = this;
+    const response = new ResponseHelper().azure().redirect(isPermanent, location);
+    self._send(response);
+}
+
 AzureResponseAdapter.prototype._send = function (res) {
     let self = this;
     if (self.context && self.context.done && typeof self.context.done === 'function') {

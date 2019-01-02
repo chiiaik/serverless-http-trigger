@@ -22,6 +22,12 @@ DefaultResponseAdapter.prototype.ok = function (result) {
     self._send(null, response);
 }
 
+DefaultResponseAdapter.prototype.redirect = function (isPermenant, location) {
+    const self = this;
+    const response = new ResponseHelper().redirect(isPermenant, location);
+    self._send(null, response);
+}
+
 DefaultResponseAdapter.prototype._send = function (err, res = null) {
     let self = this;
     if (self.callback && typeof self.callback === 'function') {
