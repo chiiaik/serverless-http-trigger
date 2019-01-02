@@ -15,7 +15,6 @@ function HttpTrigger () {
             console.error(error);
         }
     });
-    this.providerName = null;
     this.event = null;
     this.handlers = {};
     this.handlers['get'] = function (event) { return this.getHandler ? this.getHandler(event) : this._handlerNotImplemented('GET'); }.bind(this);
@@ -76,7 +75,7 @@ HttpTrigger.prototype._handler = function (arg1, arg2, arg3) {
 HttpTrigger.prototype._invokeResultHandler = function (result) {
     const self = this;
     if (self.responseHandler) {
-        return self.responseHandler(self.providerName, result);
+        return self.responseHandler(self.responseAdapter, result);
     }
     return self.responseAdapter.ok(result);
 }
@@ -102,7 +101,6 @@ HttpTrigger.prototype._map = function (arg1, arg2, arg3) {
             if (arg3 && typeof arg3 === 'function') {
                 provider = unwrap.aws().httpTrigger();
                 self.responseAdapter = new AwsResponseAdapter(arg3);
-                self.providerName = 'aws';
             }
             else {
                 return reject(new Error(HttpTrigger.ERROR_AWS_MISSING_ARGUMENTS));
@@ -111,7 +109,6 @@ HttpTrigger.prototype._map = function (arg1, arg2, arg3) {
         else if (self._isAzure(arg1)) {
             provider = unwrap.azure().httpTrigger();
             self.responseAdapter = new AzureResponseAdapter(arg1);
-            self.providerName = 'azure';
         }
         if (provider) {
             self.event = ({
