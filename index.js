@@ -26,6 +26,7 @@ function HttpTrigger () {
     // Can be overwritten
     this.authorizationHandler = this._authorization.bind(this);
     this.requestHandler = null;
+    this.responseHandler = null;
     this.getHandler = null;
     this.postHandler = null;
     this.putHandler = null;
@@ -64,11 +65,24 @@ HttpTrigger.prototype._handler = function (arg1, arg2, arg3) {
         return self._invokeHandler(self.event);
     })
     .then(function (result) {
-        self.responseAdapter.ok(result);
+        self._invokeResultHandler(result);
     })
     .catch(function (error) {
-        self.responseAdapter.serverError(error.message);
+        self._invokeErrorHandler(error);
     });
+}
+
+HttpTrigger.prototype._invokeResultHandler = function (result) {
+    const self = this;
+    if (self.responseHandler) {
+        return self.responseHandler(result);
+    }
+    return self.responseAdapter.ok(result);
+}
+
+HttpTrigger.prototype._invokeErrorHandler = function (error) {
+    const self = this;
+    return self.responseAdapter.serverError(error.message);
 }
 
 /**
