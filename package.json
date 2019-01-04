@@ -1,6 +1,6 @@
 {
   "name": "serverless-http-trigger",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Wrapper to abstract cloud service provider specific implementation on HTTP trigger handler",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,6 @@
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
     "serverless-lambda-event-helper": "^1.0.11",
-    "serverless-lambda-http-response": "^1.0.5"
+    "serverless-lambda-http-response": "^1.0.9"
   }
 }
