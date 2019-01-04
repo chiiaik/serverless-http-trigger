@@ -241,13 +241,13 @@ test ('1.27 _handler rejects to error', (done) => {
     process.env['SERVICE_PROVIDER'] = 'unknown';
     expect.assertions(3);
     httpTrigger._handler(AWS_TEST_EVENT, null, (err, result) => {
-        expect(err).not.toBeNull();
-        expect(result).toBeNull();
+        expect(result).not.toBeNull();
+        expect(err).toBeNull();
         let data = null;
         try {
-            data = JSON.parse(err.body);
+            data = JSON.parse(result.body);
         } catch(e) {}
-        expect(data).toEqual('I am evil');
+        expect(data).toEqual({ error: 'I am evil' });
         done();
     });
 })

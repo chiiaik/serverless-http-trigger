@@ -20,13 +20,13 @@ test ('3.1 ok response is valid', (done) => {
 
 test ('3.2 clientError response is valid', (done) => {
     let adapter = new AwsResponseAdapter(function (err, result) {
-        expect(err).not.toBeNull();
-        expect(result).toBeNull();
+        expect(result).not.toBeNull();
+        expect(err).toBeNull();
         let data = null;
         try {
-            data = JSON.parse(err.body);
+            data = JSON.parse(result.body);
         } catch (e) {}
-        expect(data).toEqual(CLIENT_ERROR);
+        expect(data).toEqual({ error: CLIENT_ERROR });
         done();
     });
     expect.assertions(3);
@@ -35,13 +35,13 @@ test ('3.2 clientError response is valid', (done) => {
 
 test ('3.3 serverError response is valid', (done) => {
     let adapter = new AwsResponseAdapter(function (err, result) {
-        expect(err).not.toBeNull();
-        expect(result).toBeNull();
+        expect(result).not.toBeNull();
+        expect(err).toBeNull();
         let data = null;
         try {
-            data = JSON.parse(err.body);
+            data = JSON.parse(result.body);
         } catch (e) {}
-        expect(data).toEqual(SERVER_ERROR);
+        expect(data).toEqual({ error: SERVER_ERROR });
         done();
     });
     expect.assertions(3);
