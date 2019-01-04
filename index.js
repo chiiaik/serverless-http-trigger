@@ -81,6 +81,7 @@ HttpTrigger.prototype._invokeResultHandler = function (result) {
 }
 
 HttpTrigger.prototype._invokeErrorHandler = function (error) {
+    console.error('FAILED to handle HTTP trigger due to ', error.message);
     const self = this;
     return self.responseAdapter.serverError(error.message);
 }

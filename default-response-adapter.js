@@ -7,13 +7,13 @@ function DefaultResponseAdapter (callback) {
 DefaultResponseAdapter.prototype.clientError = function (err) {
     let self = this;
     let response = new ResponseHelper().clientError(err);
-    self._send(response);
+    self._send(null, response);
 }
 
 DefaultResponseAdapter.prototype.serverError = function (err) {
     let self = this;
     let response = new ResponseHelper().serverError(err);
-    self._send(response);
+    self._send(null, response);
 }
 
 DefaultResponseAdapter.prototype.ok = function (result) {

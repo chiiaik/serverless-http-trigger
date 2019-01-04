@@ -1,6 +1,6 @@
 {
   "name": "serverless-http-trigger",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Wrapper to abstract cloud service provider specific implementation on HTTP trigger handler",
   "main": "index.js",
   "scripts": {

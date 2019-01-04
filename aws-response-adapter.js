@@ -7,13 +7,13 @@ function AwsResponseAdapter (callback) {
 AwsResponseAdapter.prototype.clientError = function (err) {
     let self = this;
     let response = new ResponseHelper().aws().clientError(err);
-    self._send(response);
+    self._send(null, response);
 }
 
 AwsResponseAdapter.prototype.serverError = function (err) {
     let self = this;
     let response = new ResponseHelper().aws().serverError(err);
-    self._send(response);
+    self._send(null, response);
 }
 
 AwsResponseAdapter.prototype.ok = function (result) {
